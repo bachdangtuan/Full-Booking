@@ -19,7 +19,7 @@ export default function HomeCarousel(props) {
         return arrCarousel.map((sp, index) => {
            return <div key={index}>
                 <div style={contentStyle}>
-                    <img src={sp.hinhAnh} alt="" />
+                    <img src={sp.hinhAnh} className='w-full' alt="" />
                 </div>
             </div>
         })
