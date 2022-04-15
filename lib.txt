@@ -1,0 +1,8 @@
+npm i react-redux
+npm i redux
+npm i redux-thunk
+npm i react-router-dom
+npm i lodash
+npm i axios
+npm i moment
+npm i tailwindcss
