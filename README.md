@@ -11,3 +11,4 @@
         npm i axios </br>
         npm i moment </br>
         npm i tailwindcss </br>
+#### Phần 2 : Tổ Chức Bố cục dự án
