@@ -13,7 +13,24 @@
         npm i tailwindcss v3 </br>
 #### Phần 2 : Tổ Chức Bố cục dự án 
 .
-└── src</br>
+├── src
+│   ├── controller
+│   │   ├── **/*.css
+│   ├── views
+│   ├── model
+│   ├── index.js
+├── public
+│   ├── css
+│   │   ├── **/*.css
+│   ├── images
+│   ├── js
+│   ├── index.html
+├── dist (or build
+├── node_modules
+├── package.json
+├── package-lock.json 
+└── .gitignore
+<!-- └── src</br>
     ├── Page</br>
     │   ├── Contact</br>
     │   ├── News</br>
@@ -32,4 +49,4 @@
     │           ├── Header</br>
     │           └── HomeCarousel</br>
     └── Util</br>
-        └── Setting(định nghĩa tham số cố định path API)</br>
+        └── Setting(định nghĩa tham số cố định path API)</br> -->
