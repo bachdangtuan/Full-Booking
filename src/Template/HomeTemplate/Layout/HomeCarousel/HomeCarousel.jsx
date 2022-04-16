@@ -1,7 +1,9 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Carousel } from 'antd';
 import 'antd/dist/antd.css';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import axios from 'axios';
+import { GetAPICarousel } from '../../../../redux/actions/CarouselAction';
 
 const contentStyle = {
     height: '600px',
@@ -12,6 +14,12 @@ const contentStyle = {
 };
 
 export default function HomeCarousel(props) {
+   const dispatch = useDispatch();
+
+    // Khi component render xong thì kích hoạt
+    useEffect(()=>{
+        dispatch (GetAPICarousel)
+    },[])
 
     let { arrCarousel } = useSelector(state => state.CarouselReducer)
 

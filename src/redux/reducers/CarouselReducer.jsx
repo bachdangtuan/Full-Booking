@@ -9,7 +9,9 @@ const stateDefault = {
 
 export const CarouselReducer = (state = stateDefault, action) => {
     switch (action.type) {
-
+        case 'SET_CAROUSEL':{
+            state.arrCarousel = action.arrCarousel
+        }
 
         default:
             break;
