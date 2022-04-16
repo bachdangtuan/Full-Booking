@@ -1,8 +1,6 @@
 import React, { useEffect } from 'react'
 import { Carousel } from 'antd';
-import 'antd/dist/antd.css';
 import { useDispatch, useSelector } from 'react-redux';
-import axios from 'axios';
 import { GetAPICarousel } from '../../../../redux/actions/CarouselAction';
 
 const contentStyle = {
