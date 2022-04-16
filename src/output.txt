@@ -1,0 +1,62 @@
+Folder PATH listing
+Volume serial number is 8429-33A1
+C:.
+|   App.css
+|   App.js
+|   App.test.js
+|   index.css
+|   index.js
+|   logo.svg
+|   output.txt
+|   reportWebVitals.js
+|   setupTests.js
+|   
++---Pages
+|   +---Contact
+|   |       Contact.jsx
+|   |       
+|   +---Home
+|   |   |   Home.jsx
+|   |   |   
+|   |   \---HomeMenu
+|   |           HomeMenu.jsx
+|   |           
+|   \---News
+|           News.jsx
+|           
++---redux
+|   |   configStore.js
+|   |   
+|   +---actions
+|   |   |   CarouselAction.jsx
+|   |   |   
+|   |   \---TypeAction
+|   |           TypeActionCarousel.js
+|   |           
+|   \---reducers
+|           CarouselReducer.jsx
+|           
++---Services
+|       baseService.js
+|       QuanLyPhimService.jsx
+|       
++---Template
+|   +---AdminTemplate
+|   +---HomeTemplate
+|   |   |   HomeTemplate.js
+|   |   |   
+|   |   \---Layout
+|   |       +---Footer
+|   |       |       Footer.jsx
+|   |       |       
+|   |       +---Header
+|   |       |       Header.jsx
+|   |       |       
+|   |       \---HomeCarousel
+|   |               HomeCarousel.jsx
+|   |               
+|   \---UserTemplate
+\---util
+    \---settings
+            config.js
+            

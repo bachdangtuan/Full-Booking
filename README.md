@@ -12,30 +12,13 @@
         npm i moment </br>
         npm i tailwindcss v3 </br>
 #### Phần 2 : Tổ Chức Bố cục dự án 
-.
-└── src</br>
-    ├── Page</br>
-    │   ├── Contact</br>
-    │   ├── News</br>
-    │   └── Home</br>
-    │       └── HomeMenu</br>
-    ├── Redux</br>
-    │   ├── Action</br>
-    │   │   └── ActionType(Định nghĩa các tham số thay đổi trong Action)</br>
-    │   └── Reducers</br>
-    ├── Template</br>
-    │   └── Layout</br>
-    │       ├── UserTemplate</br>
-    │       ├── AdminTemplate</br>
-    │       └── HomeTemplate</br>
-    │           ├── Footer</br>
-    │           ├── Header</br>
-    │           └── HomeCarousel</br>
-    └── Util</br>
-        └── Setting(định nghĩa tham số cố định path API)</br>
+.... update picture
 
 
-#### Phần 3 : Tổ Chức Redux/ và Get API tại Carousel
+#### Phần 3 : Tổ Chức Redux/ và xử lý API 
   1.  Setup rootReducer với configStore và redux thunk midleware
-  2.  Tổ Chức Redux 2 phần (actions và reducers).
-  3.  Tại HomeCarousel thực hiện useEffect dispatch GetAPICarousel đẩy lên store
+##### Tổ chức Redux Store và service xử lý API 
+  1.  Tổ Chức redux (Actions / Reducer / Service)
+      + Actions : Xử lý dispatch data lên Reducer
+      + Reducer : Store tổng của toàn ứng dụng
+      + Service : các hàm xử lý CRUD API 
