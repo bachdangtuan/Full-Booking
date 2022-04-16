@@ -13,23 +13,23 @@
         npm i tailwindcss v3 </br>
 #### Phần 2 : Tổ Chức Bố cục dự án 
 .
-└── src
-    ├── Page
-    │   ├── Contact
-    │   ├── News
-    │   └── Home
-    │       └── HomeMenu
-    ├── Redux
-    │   ├── Action
-    │   │   └── ActionType(Định nghĩa các tham số thay đổi trong Action)
-    │   └── Reducers
-    ├── Template
-    │   └── Layout
-    │       ├── UserTemplate
-    │       ├── AdminTemplate
-    │       └── HomeTemplate
-    │           ├── Footer
-    │           ├── Header
-    │           └── HomeCarousel
-    └── Util
-        └── Setting(định nghĩa tham số cố định path API)
+└── src</br>
+    ├── Page</br>
+    │   ├── Contact</br>
+    │   ├── News</br>
+    │   └── Home</br>
+    │       └── HomeMenu</br>
+    ├── Redux</br>
+    │   ├── Action</br>
+    │   │   └── ActionType(Định nghĩa các tham số thay đổi trong Action)</br>
+    │   └── Reducers</br>
+    ├── Template</br>
+    │   └── Layout</br>
+    │       ├── UserTemplate</br>
+    │       ├── AdminTemplate</br>
+    │       └── HomeTemplate</br>
+    │           ├── Footer</br>
+    │           ├── Header</br>
+    │           └── HomeCarousel</br>
+    └── Util</br>
+        └── Setting(định nghĩa tham số cố định path API)</br>
