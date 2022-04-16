@@ -35,4 +35,7 @@
         └── Setting(định nghĩa tham số cố định path API)</br>
 
 
-#### Phần 3 : Tổ Chức Redux/ và Get API
+#### Phần 3 : Tổ Chức Redux/ và Get API tại Carousel
+  1.  Setup rootReducer với configStore và redux thunk midleware
+  2.  Tổ Chức Redux 2 phần (actions và reducers).
+  3.  Tại HomeCarousel thực hiện useEffect dispatch GetAPICarousel đẩy lên store

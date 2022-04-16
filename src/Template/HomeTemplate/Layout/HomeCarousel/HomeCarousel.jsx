@@ -14,26 +14,25 @@ const contentStyle = {
 };
 
 export default function HomeCarousel(props) {
-   const dispatch = useDispatch();
-
+    const dispatch = useDispatch();
     // Khi component render xong thì kích hoạt
-    useEffect(()=>{
-        dispatch (GetAPICarousel)
-    },[])
+    useEffect(() => {
+        dispatch(GetAPICarousel)
+        console.log('kích hoạt get API');
+    }, [])
 
     let { arrCarousel } = useSelector(state => state.CarouselReducer)
 
     let renderCarousel = () => {
+
         return arrCarousel.map((sp, index) => {
-           return <div key={index}>
+            return <div key={index}>
                 <div style={contentStyle}>
                     <img src={sp.hinhAnh} className='w-full' alt="anh nen" />
                 </div>
             </div>
         })
     }
-
-    console.log(arrCarousel);
     return (
         <div>
             <Carousel autoplay>
