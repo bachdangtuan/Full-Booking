@@ -33,3 +33,6 @@
     │           └── HomeCarousel</br>
     └── Util</br>
         └── Setting(định nghĩa tham số cố định path API)</br>
+
+
+#### Phần 3 : Tổ Chức Redux/ và Get API
