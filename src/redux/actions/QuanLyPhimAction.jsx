@@ -6,7 +6,6 @@ export const layDanhSachPhimAction = () =>{
     return async (dispatch) =>{
         try {
             const getAPI = await layDanhSachPhim();
-    
             //Đưa lên store
             dispatch({
                 type: SET_DANH_SACH_PHIM,

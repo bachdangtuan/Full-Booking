@@ -7,23 +7,21 @@ import { layDanhSachPhimAction } from '../../redux/actions/QuanLyPhimAction';
 
 
 export default function Home(props) {
-
+  // Lấy danh Sách Phim
   let { arrDSphim } = useSelector(state => state.DanhSachPhimReducer)
-  console.log('Danh Sasch Phim', arrDSphim);
   const dispatch = useDispatch()
-  const renderDSphim = () => {
-    return arrDSphim.map((sp, index) => {
-      return <Film key={index} />
+  // const renderDSphim = () => {
+  //   return arrDSphim.map((sp, index) => {
+  //     return <Film key={index} />
 
-    })
-  }
+  //   })
+  // }
   useEffect(() => {
     dispatch(layDanhSachPhimAction())
   }, [])
 
   return (
     <div>
-
       <section className="text-gray-600 body-font">
         <div className="container px-5 py-24 mx-auto">
           <div className='container m-auto px-40'>
@@ -33,7 +31,7 @@ export default function Home(props) {
         </div>
       </section>
       <div className="container m-auto px-40 ">
-        <HomeMenu></HomeMenu>
+        <HomeMenu ></HomeMenu>
       </div>
 
     </div>

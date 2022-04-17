@@ -16,7 +16,6 @@ export default function HomeCarousel(props) {
     // Khi component render xong thì kích hoạt
     useEffect(() => {
         dispatch(GetAPICarousel)
-        console.log('kích hoạt get API');
     }, [])
 
     let { arrCarousel } = useSelector(state => state.CarouselReducer)
