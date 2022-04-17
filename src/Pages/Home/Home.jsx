@@ -24,14 +24,6 @@ export default function Home(props) {
     
     <div className='container m-auto px-40'>
            <MultirowSlickl arrDSphim={arrDSphim} ></MultirowSlickl>
-      <section className="text-gray-600 body-font">
-        <div className="container px-5 py-24 mx-auto">
-          <div className="flex flex-wrap -m-4">
-            {renderDSphim}
-          </div>
-        </div>
-      </section>
-   
       <HomeMenu></HomeMenu>
     </div>
   )

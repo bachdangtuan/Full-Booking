@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Slider from "react-slick";
 import Film from "../Film/Film";
+import Film_flip from "../Film/Film_flip";
 import styleSlick from './MultirowSlick.module.css';
 
 // Mũi Tên Trái
@@ -31,9 +32,9 @@ export default class MultipleRows extends Component {
     // Render Phim Slick
     renderPhim = () => {
 
-        return this.props.arrDSphim.map((sp, index) => {
+        return this.props.arrDSphim.slice(0,12).map((sp, index) => {
             return <div key={index} className={`${styleSlick['width-item']}`}>
-                <Film phim={sp} />
+                <Film_flip phim={sp}/>
             </div>
 
         })
