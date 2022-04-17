@@ -9,6 +9,7 @@ import { layDanhSachPhimAction } from '../../redux/actions/QuanLyPhimAction';
 export default function Home(props) {
 
   let { arrDSphim } = useSelector(state => state.DanhSachPhimReducer)
+  console.log('Danh Sasch Phim', arrDSphim);
   const dispatch = useDispatch()
   const renderDSphim = () => {
     return arrDSphim.map((sp, index) => {
@@ -17,14 +18,25 @@ export default function Home(props) {
     })
   }
   useEffect(() => {
-    dispatch (layDanhSachPhimAction())
+    dispatch(layDanhSachPhimAction())
   }, [])
-  
+
   return (
-    
-    <div className='container m-auto px-40'>
-           <MultirowSlickl arrDSphim={arrDSphim} ></MultirowSlickl>
-      <HomeMenu></HomeMenu>
+    <div>
+
+      <section className="text-gray-600 body-font">
+        <div className="container px-5 py-24 mx-auto">
+          <div className='container m-auto px-40'>
+            <MultirowSlickl arrDSphim={arrDSphim} ></MultirowSlickl>
+
+          </div>
+        </div>
+      </section>
+      <div className="container m-auto px-40 ">
+        <HomeMenu></HomeMenu>
+      </div>
+
     </div>
+
   )
 }
