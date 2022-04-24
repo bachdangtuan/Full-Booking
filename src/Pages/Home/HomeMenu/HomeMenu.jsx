@@ -27,7 +27,6 @@ export default function HomeMenu(props) {
 
     //Render Hệ Thống Rạp
     const renderRapPhim = () => {
-        console.log(arrRapPhim);
         const { tabPosition } = state.state
         return arrRapPhim.map((sp, index) => {
             return <TabPane tab={<img src={sp.logo} className="rounded-full" width="50" />} key={index}>
@@ -57,7 +56,7 @@ export default function HomeMenu(props) {
                                                     <p>{cumRap.diaChi}</p>
                                                     <div className='grid grid-cols-5 gap-5'>
                                                         {phim.lstLichChieuTheoPhim?.splice(0, 10).map((lichChieu, index) => {
-                                                            console.log(lichChieu.ngayChieuGioChieu);
+                                            
                                                             return <NavLink to='/' key={index}>
                                                                 {moment(lichChieu.ngayChieuGioChieu).format('hh:mm A')}
                                                             </NavLink>

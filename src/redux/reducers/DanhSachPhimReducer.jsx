@@ -1,3 +1,4 @@
+import { SET_CHI_TIET_PHIM } from "../actions/TypeAction/TypeActionQuanLyRap";
 import { SET_PHIM_DANG_CHIEU , SET_PHIM_SAP_CHIEU , SET_DANH_SACH_PHIM } from "../actions/TypeAction/TypeQuanLyPhim";
 
 
@@ -21,9 +22,10 @@ const stateDefault = {
     ],
     // dangChieu: true,
     // sapChieu: false,
-    arrDSphimDefault: []
-
+    arrDSphimDefault: [],
+    filmDetail : {}
 }
+
 
 export const DanhSachPhimReducer = (state = stateDefault, action) => {
     switch (action.type) {
@@ -46,6 +48,11 @@ export const DanhSachPhimReducer = (state = stateDefault, action) => {
 
             state.arrDSphim = state.arrDSphimDefault.filter(film => film.sapChieu === true );
 
+            return { ...state }
+        }
+
+        case SET_CHI_TIET_PHIM:{
+            state.filmDetail = action.filmDetail;
             return { ...state }
         }
         default: return { ...state }

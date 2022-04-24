@@ -6,6 +6,7 @@ import { HomeTemplate } from './Template/HomeTemplate/HomeTemplate'
 import Contact from './Pages/Contact/Contact';
 import Home from './Pages/Home/Home';
 import News from './Pages/News/News';
+import Details from './Component/PageDetails/Details';
 
 export const history = createBrowserHistory()
 function App() {
@@ -15,6 +16,7 @@ function App() {
         <HomeTemplate path="/" exact Component={Home}></HomeTemplate>
         <HomeTemplate path="/contact" exact Component={Contact}></HomeTemplate>
         <HomeTemplate path="/news" exact Component={News}></HomeTemplate>
+        <HomeTemplate path="/detail/:id" exact Component={Details}></HomeTemplate>
       </Switch>
     </Router>
   );

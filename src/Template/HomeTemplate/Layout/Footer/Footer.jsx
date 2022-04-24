@@ -1,6 +1,23 @@
 import React from 'react'
+import { useSelector } from 'react-redux';
+import _ from 'lodash';
 
-export default function Footer() {
+export default function Footer(props) {
+
+    const { arrRapPhim } = useSelector(state => state.QuanLyRapReducer)
+    const arrRap = _.map(arrRapPhim, (rapPhim) => _.pick(rapPhim, ['logo']))
+    console.log(arrRap);
+
+    //render Doi Tac
+
+    const renderDoiTac = () => {
+        return arrRap.map((sp, index) => {
+            return <img src={sp.logo} alt="" key={index} />
+        }
+        )
+    }
+
+
     return (
         <footer className="divide-y container px-40">
             <div className="container flex flex-col justify-between py-10 mx-auto space-y-8 lg:flex-row lg:space-y-0">
@@ -33,15 +50,10 @@ export default function Footer() {
                         </ul>
                     </div>
                     <div className="space-y-3">
-                        <h3 className="tracking-wide uppercase dark:text-coolGray-50">Company</h3>
-                        <ul className="space-y-1">
-                            <li>
-                                <a rel="noopener noreferrer" href="#">Privacy</a>
-                            </li>
-                            <li>
-                                <a rel="noopener noreferrer" href="#">Terms of Service</a>
-                            </li>
-                        </ul>
+                        <h3 className="tracking-wide uppercase dark:text-coolGray-50">Đối Tác</h3>
+                        <div className='grid grid-cols-3'>
+                            {renderDoiTac()}
+                        </div>
                     </div>
                     <div className="space-y-3">
                         <h3 className="uppercase dark:text-coolGray-50">Developers</h3>
