@@ -4,7 +4,7 @@ import "react-circular-progressbar/dist/styles.css";
 import { Tabs } from 'antd';
 import { useDispatch, useSelector } from 'react-redux'
 import moment from 'moment';
-
+import {NavLink} from 'react-router-dom'
 import { layLichChieu } from '../../redux/actions/QuanLyRapAction'
 
 
@@ -42,21 +42,45 @@ export default function Details(props) {
                 <CircularProgressbar className='ml-20' value={percentage} text={`${percentage}%`} />
             </div>
             <div className='mt-5 px-20'>
-                <Tabs tabPosition='left'>
-                    <TabPane tab="Tab 1" key="1">
-                        Content of Tab 1
+
+                <Tabs defaultActiveKey="1" centered>
+                    <TabPane tab="Lịch Chiếu" key="1">
+
+                        <Tabs tabPosition='left'>
+                            {filmDetail.heThongRapChieu?.map((htr, index) => {
+                                return <TabPane tab={<div> <img src={htr.logo} alt="logo" width={50} height={50} /> </div>} key={index}>
+                                    {htr?.cumRapChieu.map((cumRap, index) => {
+                                        return <div key={index} className='flex flex-row mb-8' >
+                                            <img src={cumRap.hinhAnh} alt="logo" width={50} height={50} className='mr-5' />
+                                            <div>
+                                                <h1>{cumRap.tenCumRap}</h1>
+                                                <p>{cumRap.diaChi}</p>
+                                                <div className='grid grid-cols-4'>
+                                                    {cumRap.lichChieuPhim?.map((lichChieu, index) => {
+                                                        return <NavLink to='/' key={index} className='col-span-1 mr-3'>
+                                                            {moment(lichChieu.ngayChieuGioChieu).format('HH:MM A')}
+
+                                                        </NavLink>
+                                                    })}
+
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    })}
+                                </TabPane>
+                            })}
+
+                        </Tabs>
                     </TabPane>
-                    <TabPane tab="Tab 2" key="2">
-                        Content of Tab 2
+                    <TabPane tab="Thông Tin" key="2">
+                        Content of Tab Pane 2
                     </TabPane>
-                    <TabPane tab="Tab 3" key="3">
-                        Content of Tab 3
+                    <TabPane tab="Đánh Giá" key="3">
+                        Content of Tab Pane 3
                     </TabPane>
                 </Tabs>
-
             </div>
-
-
         </div>
     )
 }
