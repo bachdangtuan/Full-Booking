@@ -10,13 +10,15 @@ import News from './Pages/News/News';
 import Details from './Component/PageDetails/Details';
 import Checkout from './Pages/Checkout/Checkout';
 import Login from './Pages/Login/Login';
+import { UserTemplate } from './Template/UserTemplate/UserTemplate';
+
 
 export const history = createBrowserHistory()
 function App() {
   return (
     <Router history={history}>
       <Switch>
-        <Route path='/login' exact Component={Login}></Route>
+        <UserTemplate path='/login' exact Component={Login}></UserTemplate>
         <HomeTemplate path="/" exact Component={Home}></HomeTemplate>
         <HomeTemplate path="/contact" exact Component={Contact}></HomeTemplate>
         <HomeTemplate path="/news" exact Component={News}></HomeTemplate>

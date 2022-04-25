@@ -3,8 +3,6 @@ import { Redirect, Route } from 'react-router-dom';
 import {USER_LOGIN} from '../../util/settings/config'
 
 
-
-
 export const CheckoutTemplate = (props) => {
     const { Component, ...restProps } = props;
 
