@@ -4,9 +4,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import { GetAPICarousel } from '../../../../redux/actions/CarouselAction';
 
 const contentStyle = {
-    height: '600px',
+    height: 'auto',
     color: '#fff',
-    lineHeight: '160px',
+    lineHeight: 'auto',
     textAlign: 'center',
     background: '#364d79',
 };

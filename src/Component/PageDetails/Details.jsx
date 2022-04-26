@@ -57,7 +57,7 @@ export default function Details(props) {
                                                 <p>{cumRap.diaChi}</p>
                                                 <div className='grid grid-cols-4'>
                                                     {cumRap.lichChieuPhim?.map((lichChieu, index) => {
-                                                        return <NavLink to='/' key={index} className='col-span-1 mr-3'>
+                                                        return <NavLink to={`/checkout/${lichChieu.maLichChieu}`} key={index} className='col-span-1 mr-3'>
                                                             {moment(lichChieu.ngayChieuGioChieu).format('HH:MM A')}
 
                                                         </NavLink>
