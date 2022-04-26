@@ -10,6 +10,7 @@
     "@testing-library/user-event": "^13.5.0",
     "antd": "^4.19.5",
     "axios": "^0.26.1",
+    "flowbite": "^1.4.3",
     "formik": "^2.2.9",
     "history": "^4.10.0",
     "lodash": "^4.17.21",

@@ -5,5 +5,13 @@
 /* Custom CSS */
 .ant-carousel .slick-dots{
     margin-left: 0% !important;
+
 }
 
+
+ol, ul, dl{
+    margin-bottom: 0em !important;
+}
+.slick-prev {
+    left: -53px !important;
+}

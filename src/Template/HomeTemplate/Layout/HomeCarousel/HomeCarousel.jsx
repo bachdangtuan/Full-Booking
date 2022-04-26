@@ -25,7 +25,10 @@ export default function HomeCarousel(props) {
         return arrCarousel.map((sp, index) => {
             return <div key={index}>
                 <div style={contentStyle}>
-                    <img src={sp.hinhAnh} className='w-full' alt="anh nen" />
+                    <img src={sp.hinhAnh} style={{
+                        width:'65%',
+                        margin:'auto'
+                    }} alt="anh nen" />
                 </div>
             </div>
         })
