@@ -1,42 +1,60 @@
-import React, { useEffect } from 'react';
+import React, { Fragment, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { layChiTietPhongVeAction } from '../../redux/actions/QuanLyDatVeAction';
+import style from '../Checkout/Checkout.module.css'
+
 
 export default function Checkout(props) {
 
+  // Thông Tin User Login
   const { userLogin } = useSelector(state => state.QuanLyNguoiDungReducer)
   console.log(userLogin);
 
 
+  // Thông Tin Phim
+  const { chiTietPhongVe } = useSelector(state => state.QuanLyDatVeReducer)
+  const { thongTinPhim, danhSachGhe } = chiTietPhongVe;
 
-  const chiTietPhongVe = useSelector(state => state.QuanLyDatVeReducer)
-
-
+  //Get API
   const dispatch = useDispatch();
-  
-  useEffect(() =>{
+  useEffect(() => {
     console.log(props.match.params.id);
 
 
     const action = layChiTietPhongVeAction(props.match.params.id)
     dispatch(action)
-  },[])
+  }, [])
 
-  console.log(chiTietPhongVe);
+  console.log('check', { chiTietPhongVe });
+  console.log(thongTinPhim);
+
+  const renderGhe = () => {
+    return danhSachGhe?.map((sp, index) => {
+      return <Fragment key={index}>
+        {sp.loaiGhe === 'Vip' ? <button className={`${style['ghe']} ${style['gheVip']}`}>{sp.stt}</button> :
+          <button className={`${style['ghe']}`}>{sp.stt}</button>}
+          {(index+1)%16 === 0 ? <br/>:''}
+
+      </Fragment>
+
+
+    })
+  }
 
 
   return (
-    <div className='container'>
+    <div className='container px-10 m-auto pt-20'>
+      <h1 className='text-center'>ĐẶT GHẾ XEM PHIM</h1>
       <div className='grid grid-cols-12'>
-        <div className='col-span-8'>
-
+        <div className='col-span-9'>
+          {renderGhe()}
         </div>
-        <div className='col-span-4'>
+        <div className='col-span-3'>
           <h3 className='text-green-400 text-center'>0 đ</h3>
           <hr />
-          <h3>Lật Mặt 48h</h3>
-          <p>Địa Điểm:</p>
-          <p>Ngày Chiếu</p>
+          <h3>Tên Phim:{thongTinPhim?.tenPhim}</h3>
+          <p>Địa Điểm:{thongTinPhim?.diaChi} </p>
+          <p>Ngày Chiếu: {thongTinPhim?.ngayChieu}</p>
           <hr />
           <p>Ghế</p>
           <p>0đ</p>
@@ -45,9 +63,9 @@ export default function Checkout(props) {
           <hr />
           <h3>Số Điện Thoại: {userLogin.soDT}</h3>
           <div className='mb-0 flex flex-col justify-end items-center'>
-              <div className='bg-green-500 text-white w-full text-center font-bold'>
-                  Đặt Vé
-              </div>
+            <div className='bg-green-500 text-white w-full text-center font-bold'>
+              Đặt Vé
+            </div>
           </div>
         </div>
       </div>
