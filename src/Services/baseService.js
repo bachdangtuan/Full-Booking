@@ -1,5 +1,5 @@
 import Axios from "axios"
-import {DOMAIN,TOKEN,TokenCyberSoft} from '../util/settings/config'
+import {DOMAIN,TOKEN,TokenCybersoft} from '../util/settings/config'
 
 export class baseService {
     //put json về phía backend
@@ -9,8 +9,8 @@ export class baseService {
             method:'PUT',
             data:model,
             headers: {
-                'TokenCyberSoft': TokenCyberSoft,
-                'Authorization': 'Bearer ' + localStorage.getItem(TOKEN)} //JWT
+                TokenCybersoft: TokenCybersoft,
+                Authorization: 'Bearer ' + localStorage.getItem(TOKEN)} 
         }) 
     }
 
@@ -20,8 +20,9 @@ export class baseService {
             method:'POST',
             data:model,
             headers: {
-                'TokenCyberSoft': TokenCyberSoft,
-                'Authorization': 'Bearer ' + localStorage.getItem(TOKEN)} //JWT
+                TokenCybersoft: TokenCybersoft,
+                Authorization: 'Bearer ' + localStorage.getItem(TOKEN)
+            } 
         }) 
     }
 
@@ -31,8 +32,8 @@ export class baseService {
             url:`${DOMAIN}${url}`,
             method:'GET',
             headers: {
-                'TokenCyberSoft': TokenCyberSoft,
-                'Authorization': 'Bearer ' + localStorage.getItem(TOKEN)}
+                TokenCybersoft: TokenCybersoft,
+                Authorization: 'Bearer ' + localStorage.getItem(TOKEN)} 
         })
     }
 
@@ -41,8 +42,8 @@ export class baseService {
             url:`${DOMAIN}${url}`,
             method:'DELETE',
             headers: {
-                'TokenCyberSoft': TokenCyberSoft,
-                'Authorization': 'Bearer ' + localStorage.getItem(TOKEN)} //token yêu cầu từ backend chứng minh user đã đăng nhập rồi
+                TokenCybersoft: TokenCybersoft,
+                Authorization: 'Bearer ' + localStorage.getItem(TOKEN)} //token yêu cầu từ backend chứng minh user đã đăng nhập rồi
         })
     }
 }
