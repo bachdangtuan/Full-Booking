@@ -56,7 +56,7 @@ export default function Checkout(props) {
 
   const renderGheDat = () => {
     return danhSachGheDat.map((sp, index) => {
-      return <span key={index} className='ml-5'>{sp.tenGhe}</span>
+      return <span key={index} className='ml-3'>{sp.tenGhe}</span>
     })
   }
 
@@ -68,7 +68,7 @@ export default function Checkout(props) {
       let gia = danhSachGhe[i].giaVe
       tongGia += gia
     }
-    return <span>{tongGia}</span>
+    return <span>{tongGia.toLocaleString()}</span>
   }
 
   return (
@@ -79,13 +79,13 @@ export default function Checkout(props) {
           {renderGhe()}
         </div>
         <div className='col-span-3'>
-          <h3 className='text-green-400 text-center'>0 đ</h3>
+          <h3 className='text-green-400 text-center'>{tinhTienVe()} đ</h3>
           <hr />
           <h3>{thongTinPhim?.tenPhim}</h3>
           <p>Địa Điểm:{thongTinPhim?.diaChi}</p>
           <p>Ngày Chiếu: {thongTinPhim?.ngayChieu}</p>
           <hr />
-          <p>Ghế {renderGheDat()} </p>
+          <div className='break-words'>Ghế {renderGheDat()} </div>
           <p>Tính Tiền: {tinhTienVe()} </p>
           <hr />
           <h3>Email: {userLogin.email} </h3>
