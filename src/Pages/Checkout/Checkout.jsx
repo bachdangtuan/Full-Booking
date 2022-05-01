@@ -7,6 +7,7 @@ import style from '../Checkout/Checkout.module.css'
 export default function Checkout(props) {
   const dispatch = useDispatch();
 
+  // Thông Tin User Login
   const { userLogin } = useSelector(state => state.QuanLyNguoiDungReducer)
 
 
