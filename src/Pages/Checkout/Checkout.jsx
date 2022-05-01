@@ -1,6 +1,7 @@
 import React, { Fragment, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { layChiTietPhongVeAction } from '../../redux/actions/QuanLyDatVeAction';
+import { ThongTinDatVe } from '../../model/ThongTinDatVe';
+import { datVeAction, layChiTietPhongVeAction } from '../../redux/actions/QuanLyDatVeAction';
 import { DAT_GHE } from '../../redux/actions/TypeAction/TypeActionQuanLyDatVe';
 import style from '../Checkout/Checkout.module.css'
 
@@ -92,7 +93,15 @@ export default function Checkout(props) {
           <hr />
           <h3>Số Điện Thoại: {userLogin.soDT}</h3>
           <div className='mb-0 flex flex-col justify-end items-center'>
-            <div className='bg-green-500 text-white w-full text-center font-bold cursor-pointer'>
+            <div onClick={() =>{
+              const thongTinDatVe = new ThongTinDatVe()
+              thongTinDatVe.maLichChieu = props.match.params.id
+               thongTinDatVe.danhSachVe = danhSachGheDat
+
+               console.log(thongTinDatVe);
+               dispatch(datVeAction(thongTinDatVe))
+
+            }} className='bg-green-500 text-white w-full text-center font-bold cursor-pointer'>
               Đặt Vé
             </div>
           </div>
