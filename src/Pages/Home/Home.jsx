@@ -25,7 +25,7 @@ export default function Home(props) {
     <div>
       <HomeCarousel></HomeCarousel>
       <section className="text-gray-600 body-font">
-        <div className="container px-5 py-24 mx-auto">
+        <div className="container px-3 py-24 mx-auto">
           <div className='container m-auto px-40'>
             <MultirowSlickl arrDSphim={arrDSphim} ></MultirowSlickl>
 

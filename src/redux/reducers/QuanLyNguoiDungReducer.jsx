@@ -1,28 +1,46 @@
 import { TOKEN, USER_LOGIN } from "../../util/settings/config";
-import { DANG_NHAP } from "../actions/TypeAction/TypeActionQuanLyDangNhap";
+import { DANG_NHAP, SET_THONG_TIN_NGUOI_DUNG } from "../actions/TypeAction/TypeActionQuanLyDangNhap";
 
 //Lưu thông tin đăng nhập lấy từ store
 
 let login = {};
 if (localStorage.getItem(USER_LOGIN)) {
-    login = JSON.parse(localStorage.getItem(USER_LOGIN))
+    login = JSON.parse(localStorage.getItem(USER_LOGIN));
 }
 
 const stateDefault = {
-    userLogin: login
+    userLogin: login,
+    
+
+    thongTinNguoiDung: {
+
+    }
+
 }
 
 export const QuanLyNguoiDungReducer = (state = stateDefault, action) => {
     switch (action.type) {
         case DANG_NHAP:{
             const {thongTinDangNhap} =action
-
-
             
             localStorage.setItem(TOKEN, (thongTinDangNhap.accessToken))
             localStorage.setItem(USER_LOGIN, JSON.stringify(thongTinDangNhap))
             return {...state, userLogin:thongTinDangNhap}
         }
+
+
+        case SET_THONG_TIN_NGUOI_DUNG: {
+            
+
+            state.thongTinNguoiDung = action.thongTinNguoiDung
+
+            console.log('action',action);
+            return {...state}
+        }
+
+
+
+
         default: return { ...state }
         
     }

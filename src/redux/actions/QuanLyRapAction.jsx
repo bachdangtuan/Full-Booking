@@ -2,8 +2,6 @@ import { layDanhSachRap } from "../../Services/QuanLyRapService";
 import { layThongTinLichChieu } from "../../Services/QuanLyRapService";
 import { SET_CHI_TIET_PHIM, SET_RAP_PHIM } from "./TypeAction/TypeActionQuanLyRap";
 
-
-
 export const layDanhSachRapAction = () =>{
     return async (dispatch) =>{
         try {
@@ -20,7 +18,7 @@ export const layDanhSachRapAction = () =>{
     }
 }
 
-// Lấy lịc chiếu
+// Lấy lịch chiếu
 export const layLichChieu = (id) =>{
     return async (dispatch) =>{
         try {

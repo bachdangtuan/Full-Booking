@@ -4,12 +4,12 @@ import { useDispatch, useSelector } from 'react-redux';
 import { GetAPICarousel } from '../../../../redux/actions/CarouselAction';
 
 const contentStyle = {
-    height: 'auto',
+    height: '470px',
     color: '#fff',
     lineHeight: 'auto',
-    textAlign: 'center',
-    background: '#364d79',
+    textAlign: 'center'
 };
+
 
 export default function HomeCarousel(props) {
     const dispatch = useDispatch();
@@ -34,8 +34,10 @@ export default function HomeCarousel(props) {
         })
     }
     return (
-        <div>
-            <Carousel autoplay>
+        <div style={{
+                background: 'red'
+        }}>
+            <Carousel autoplay> 
                 {renderCarousel()}
             </Carousel>
         </div>

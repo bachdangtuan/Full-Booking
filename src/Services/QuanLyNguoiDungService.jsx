@@ -10,6 +10,12 @@ export class QuanLyNguoiDungService extends baseService {
     guiThongTinNguoiDung = (thongTinDangNhap) =>{
         return this.post('/api/QuanLyNguoiDung/DangNhap',thongTinDangNhap )
     }
+
+
+    //lịch sử đặt vé
+    layLichSuDatVe = () =>{
+        return this.post('/api/QuanLyNguoiDung/ThongTinTaiKhoan')
+    }
 }
 
 export const QLNguoiDungService = new QuanLyNguoiDungService()
