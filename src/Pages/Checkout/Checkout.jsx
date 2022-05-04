@@ -68,7 +68,6 @@ const Checkout = (props, dispatch) => {
   const { thongTinPhim, danhSachGhe } = chiTietPhongVe;
 
   //Danh Sách đặt ghế
-  console.log("danhSachGheDat", danhSachGheDat);
 
 
   // useEffect(() => {
@@ -198,7 +197,13 @@ const Checkout = (props, dispatch) => {
               thongTinDatVe.danhSachVe = danhSachGheDat
 
               console.log(thongTinDatVe);
-              dispatch(datVeAction(thongTinDatVe))
+              dispatch(datVeAction(thongTinDatVe));
+
+              
+              
+
+
+
 
             }} className='bg-green-500 text-white w-full text-center font-bold cursor-pointer'>
               Đặt Vé
@@ -211,7 +216,6 @@ const Checkout = (props, dispatch) => {
 }
 
 
-
 const KetQuaDatVe = (props) => {
 
   let veUserDat = props.ttUser.thongTinDatVe;
@@ -220,6 +224,8 @@ const KetQuaDatVe = (props) => {
   veUserDat?.sort((a,b) => a.tenPhim.length - b.tenPhim.length)
 
 
+
+  console.log(veUserDat);
   const renderDanhSachVe = () => {
     return veUserDat?.map((sp, index) => {
 
@@ -230,14 +236,14 @@ const KetQuaDatVe = (props) => {
           <div className="flex-grow">
             <h2 className="text-gray-900 title-font font-medium">{sp.tenPhim}</h2>
             <p className="text-gray-500">Ngày Đặt {moment(sp.ngayDat).format('DD:MM:YYYY')}</p>
-            <p className='text-gray-500'>Tên Rạp: { 
-                seat.tenHeThongRap
-              
+            <p className='text-gray-500'>Tên Rạp: {
+              seat.tenHeThongRap
+
             }</p>
-            <p className='text-gray-500 break-all'>Số Ghế: {sp.danhSachGhe.map((ghe,index) =>{
+            <p className='text-gray-500 break-all'>Số Ghế: {sp.danhSachGhe.map((ghe, index) => {
               return <span key={index} className='ml-3'>{ghe.tenGhe}</span>
             })}
-            
+
             </p>
           </div>
         </div>
@@ -254,15 +260,13 @@ const KetQuaDatVe = (props) => {
             <p className="lg:w-2/3 mx-auto leading-relaxed text-base">Kết Quả Đặt vé.</p>
           </div>
           <div className="flex flex-wrap -m-2">
-              {renderDanhSachVe()}
+            {renderDanhSachVe()}
           </div>
         </div>
       </section>
     </div>
   )
 }
-
-
 
 
 

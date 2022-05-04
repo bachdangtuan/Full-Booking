@@ -28,11 +28,11 @@ export default function HomeMenu(props) {
     //Render Hệ Thống Rạp
     const renderRapPhim = () => {
         const { tabPosition } = state.state
-        return arrRapPhim.map((sp, index) => {
+        return arrRapPhim?.map((sp, index) => {
             return <TabPane tab={<img src={sp.logo} className="rounded-full" width="50" />} key={index}>
 
                 <Tabs tabPosition={tabPosition} >
-                    {sp.lstCumRap?.map((cumRap, index) => {
+                    {sp.lstCumRap?.splice(1,5).map((cumRap, index) => {
                         return <TabPane tab={
                             <div style={{ width: '320px' }} className='flex'>
                                 <img src={cumRap.hinhAnh} width="50" />
@@ -46,7 +46,7 @@ export default function HomeMenu(props) {
                         } key={index}>
 
                             <div>
-                                {cumRap.danhSachPhim.map((phim, index) => {
+                                {cumRap.danhSachPhim?.splice(1,5).map((phim, index) => {
                                     return <Fragment key={index}>
                                         <div className='my-5' style={{ display: 'flex' }}>
                                             <div className='flex'>

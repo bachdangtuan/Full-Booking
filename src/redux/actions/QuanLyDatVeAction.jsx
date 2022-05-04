@@ -1,7 +1,8 @@
 import { ThongTinDatVe } from "../../model/ThongTinDatVe";
 import { layChiTietPhongVe } from "../../Services/QuanLyDatVeService";
-import { SET_CHI_TIET_PHONG_VE } from "./TypeAction/TypeActionQuanLyDatVe";
+import { DISPLAY_LOADING, HIDE_LOADING, SET_CHI_TIET_PHONG_VE } from "./TypeAction/TypeActionQuanLyDatVe";
 import { guiThongTindatVe } from "../../Services/QuanLyDatVeService";
+
 
 
 
@@ -26,12 +27,34 @@ export const layChiTietPhongVeAction = (maLichChieu) => {
 
 
 export const datVeAction = (thongTinDatVe = new ThongTinDatVe()) => {
+
+
     return async (dispatch) => {
         try {
+
+
+            dispatch({
+                type: DISPLAY_LOADING
+            })
+
+
             const result = await guiThongTindatVe(thongTinDatVe);
             console.log(result.data.content);
+
+
+            await dispatch(layChiTietPhongVeAction(thongTinDatVe.maLichChieu));
+
+
+
+
+            dispatch({
+                type: HIDE_LOADING
+            })
         }
         catch (error) {
+            dispatch({
+                type: HIDE_LOADING
+            })
             console.log(error.response?.data);
         }
     }
