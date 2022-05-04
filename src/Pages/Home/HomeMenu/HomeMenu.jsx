@@ -18,7 +18,7 @@ export default function HomeMenu(props) {
     const { TabPane } = Tabs;
     const [state, setState] = useState({
         state: {
-            tabPosition: 'left',
+            tabPosition: 'top',
         }
     })
 
@@ -56,7 +56,6 @@ export default function HomeMenu(props) {
                                                     <p>{cumRap.diaChi}</p>
                                                     <div className='grid grid-cols-5 gap-5'>
                                                         {phim.lstLichChieuTheoPhim?.splice(0, 10).map((lichChieu, index) => {
-
                                                             return <NavLink to={`/checkout/${lichChieu.maLichChieu}`} key={index}>
                                                                 {moment(lichChieu.ngayChieuGioChieu).format('hh:mm A')}
                                                             </NavLink>

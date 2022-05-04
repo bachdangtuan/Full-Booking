@@ -24,9 +24,10 @@ const Demo = (props) => {
   useEffect(() => {
     const action = layChiTietPhongVeAction(props.match.params.id)
     dispatch(action)
+    
     const action2 = layThongTinNguoiDungAction()
     dispatch(action2)
-
+    console.log('test');
   }, [])
 
 
@@ -214,12 +215,15 @@ const Checkout = (props, dispatch) => {
 const KetQuaDatVe = (props) => {
 
   let veUserDat = props.ttUser.thongTinDatVe;
+  console.log(veUserDat);
+  
+  veUserDat?.sort((a,b) => a.tenPhim.length - b.tenPhim.length)
+
 
   const renderDanhSachVe = () => {
     return veUserDat?.map((sp, index) => {
 
       const seat = _.first(sp.danhSachGhe)
-      console.log(seat);
       return <div className="p-2 lg:w-1/3 md:w-1/2 w-full" key={index}>
         <div className="h-full flex items-center border-gray-200 border p-4 rounded-lg">
           <img alt="team" className="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4" src="https://dummyimage.com/80x80" />
