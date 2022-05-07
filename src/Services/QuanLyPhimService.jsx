@@ -12,7 +12,7 @@ export class QuanLyPhimService extends baseService {
     }
     // lấy danh sách phim
     layDanhSachPhim = () =>{
-        return this.get('/api/QuanLyPhim/LayDanhSachPhim?maNhom=GP01')
+        return this.get('/api/QuanLyPhim/LayDanhSachPhim?maNhom=GP02')
     }
 
 }

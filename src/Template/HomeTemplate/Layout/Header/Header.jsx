@@ -3,34 +3,36 @@ import { Link } from 'react-router-dom'
 
 export default function Header() {
   return (
-        <header className="p-4 bg-white fixed z-50 w-full">
-        <div className="container px-20 flex justify-between h-8 mx-auto">
-          <img src="https://cyberlearn.vn/wp-content/uploads/2020/03/cyberlearn-min-new-opt2.png" alt="..." />
-          <ul className="items-stretch hidden space-x-3 lg:flex">
-            <li className="flex">
-              <a rel="noopener noreferrer" href="#" className="flex items-center px-4 -mb-1 ">Trang Chủ</a>
-            </li>
-            <li className="flex">
-              <a rel="noopener noreferrer" href="#" className="flex items-center px-4 -mb-1 ">Tin Tức</a>
-            </li>
-            <li className="flex">
-              <a rel="noopener noreferrer" href="#" className="flex items-center px-4 -mb-1 ">Liên Hệ</a>
-            </li>
-           
-          </ul>
-          <div className="items-center flex-shrink-0 hidden lg:flex">
-         
-            <button className="self-center px-4 py-3 ">
-            <i class="fa-solid fa-right-to-bracket pl-3"/> Đăng Nhập</button>
-         
-          </div>
-          <button className="p-4 lg:hidden">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-6 h-6 dark:text-coolGray-100">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
-          </button>
+    <header className="p-4 shadow-lg bg-white fixed z-50 w-full" style={{
+    
+    }}>
+      <div className="container px-20 flex justify-between h-8 mx-auto">
+        <img src="https://cyberlearn.vn/wp-content/uploads/2020/03/cyberlearn-min-new-opt2.png" alt="..." />
+        <ul className="items-stretch hidden space-x-3 lg:flex">
+          <li className="flex">
+            <a rel="noopener noreferrer" href="#" className="flex items-center px-4 -mb-1 ">Trang Chủ</a>
+          </li>
+          <li className="flex">
+            <a rel="noopener noreferrer" href="#" className="flex items-center px-4 -mb-1 ">Tin Tức</a>
+          </li>
+          <li className="flex">
+            <a rel="noopener noreferrer" href="#" className="flex items-center px-4 -mb-1 ">Liên Hệ</a>
+          </li>
+
+        </ul>
+        <div className="items-center flex-shrink-0 hidden lg:flex">
+
+          <button className="self-center px-4 py-3 ">
+            <i class="fa-solid fa-right-to-bracket pl-3" /> Đăng Nhập</button>
+
         </div>
-      </header>
+        <button className="p-4 lg:hidden">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-6 h-6 dark:text-coolGray-100">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </header>
 
   )
 }

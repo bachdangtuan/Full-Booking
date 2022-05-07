@@ -27,20 +27,22 @@ export default function HomeCarousel(props) {
             return <div key={index} className='pt-16'>
                 <div style={contentStyle}>
                     <img src={sp.hinhAnh} style={{
-                        width:'65%',
-                        margin:'auto'
+                        width: '64%',
+                        margin: 'auto',
+                        backgroundSize: 'cover'
                     }} alt="anh nen" />
                 </div>
             </div>
         })
     }
     return (
-        <div  style={{
-               background:'red'
+        <div style={{
+            background: 'red'
         }}>
-            <Carousel autoplay> 
+            <Carousel autoplay>
                 {renderCarousel()}
             </Carousel>
+
         </div>
     )
 }

@@ -8,7 +8,7 @@ export class QuanLyRapService extends baseService {
     }
     // lấy danh sách phim
     layDanhSachRap = () =>{
-        return this.get('/api/QuanLyRap/LayThongTinLichChieuHeThongRap?maNhom=GP03')
+        return this.get('/api/QuanLyRap/LayThongTinLichChieuHeThongRap?maNhom=GP02')
     }
     //lấy thông tin lịch chiếu phim
     layThongTinLichChieu = (maPhim) =>{

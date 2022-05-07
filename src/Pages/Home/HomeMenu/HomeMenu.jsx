@@ -22,9 +22,6 @@ export default function HomeMenu(props) {
         }
     })
 
-    //Render List Cụm Rạp
-
-
     //Render Hệ Thống Rạp
     const renderRapPhim = () => {
         const { tabPosition } = state.state
@@ -32,31 +29,33 @@ export default function HomeMenu(props) {
             return <TabPane tab={<img src={sp.logo} className="rounded-full" width="50" />} key={index}>
 
                 <Tabs tabPosition={tabPosition} >
-                    {sp.lstCumRap?.splice(1,5).map((cumRap, index) => {
+                    {sp.lstCumRap?.splice(1, 5).map((cumRap, index) => {
                         return <TabPane tab={
                             <div style={{ width: '320px' }} className='flex'>
-                                <img src={cumRap.hinhAnh} width="50" onError={(e) => (e.target.onerror = null, e.target.src = 'https://picsum.photos/75/75')} />
+                                <img src={cumRap.hinhAnh} width="75" onError={(e) => (e.target.onerror = null, e.target.src = 'https://picsum.photos/75/75')} />
 
                                 <div className='text-left ml-2'>
                                     <h5> {cumRap.tenCumRap}</h5>
+
                                     <p>Chi Tiết</p>
+
                                 </div>
 
                             </div>
                         } key={index}>
 
                             <div>
-                                {cumRap.danhSachPhim?.splice(1,5).map((phim, index) => {
+                                {cumRap.danhSachPhim?.splice(1, 5).map((phim, index) => {
                                     return <Fragment key={index}>
                                         <div className='my-5' style={{ display: 'flex' }}>
                                             <div className='flex'>
-                                                <img src={phim.hinhAnh} alt={phim.tenPhim} width={50} height={50} onError={(e) => (e.target.onerror = null, e.target.src = 'https://picsum.photos/75/75')} />
+                                                <img src={phim.hinhAnh} alt={phim.tenPhim} width={75} height={50} onError={(e) => (e.target.onerror = null, e.target.src = 'https://picsum.photos/75/75')} />
                                                 <div className='ml-2'>
                                                     <h1>{phim.tenPhim}</h1>
                                                     <p>{cumRap.diaChi}</p>
-                                                    <div className='grid grid-cols-5 gap-5'>
-                                                        {phim.lstLichChieuTheoPhim?.splice(0, 10).map((lichChieu, index) => {
-                                                            return <NavLink to={`/checkout/${lichChieu.maLichChieu}`} key={index}>
+                                                    <div className={`grid grid-cols-5 gap-5`}>
+                                                        {phim.lstLichChieuTheoPhim?.splice(0, 5).map((lichChieu, index) => {
+                                                            return <NavLink className={` ${style['border_tab']}`} to={`/checkout/${lichChieu.maLichChieu}`} key={index}>
                                                                 {moment(lichChieu.ngayChieuGioChieu).format('hh:mm A')}
                                                             </NavLink>
                                                         })}
@@ -82,9 +81,9 @@ export default function HomeMenu(props) {
     const { tabPosition } = state.state
     return (
         <>
-           <h1 className={`text-center ${style['title']} `}>DANH SÁCH RẠP</h1>
+            <h1 className={`text-center ${style['title']} `}>DANH SÁCH RẠP</h1>
             {/* Ant Design Tab */}
-            <Tabs tabPosition={tabPosition}>
+            <Tabs tabPosition={tabPosition} className={`${style['border_tab']}`}  >
                 {renderRapPhim()}
             </Tabs>
         </>

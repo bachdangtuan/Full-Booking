@@ -36,7 +36,7 @@ const MultirowSlickl = (props) => {
 
         return props.arrDSphim.map((sp, index) => {
             return <div key={index} className={`${styleSlick['width-item']}`}>
-                <Film_flip phim={sp} />
+                <Film_flip setModal={props.setModal} phim={sp} />
             </div>
 
         })
@@ -57,7 +57,7 @@ const MultirowSlickl = (props) => {
     return (
         <div>
             <div className="pb-5 text-center">
-                <button type="button" className="px-8 py-3 mr-6 font-semibold rounded-full bg-gray-600 text-white" onClick={() => {
+                <button type="button" className="px-8 py-3 mr-6 font-semibold rounded-full active bg-gray-600 text-white" onClick={() => {
                     const action = { type: SET_PHIM_DANG_CHIEU }
                     dispatch(action)
 

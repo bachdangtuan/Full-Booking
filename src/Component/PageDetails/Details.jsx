@@ -23,11 +23,11 @@ export default function Details(props) {
 
     }, [])
 
-    //Hiện thị phần trmă
+    //Hiện thị phần trăm
     const percentage = filmDetail.danhGia * 6;
 
     return (
-        <div className='container px-40 m-auto'>
+        <div className='container px-40 m-auto pt-36'>
             <div className='grid grid-cols-12'>
                 <div className='col-span-4 col-start-4'>
                     <div className='grid-cols-2 grid'>

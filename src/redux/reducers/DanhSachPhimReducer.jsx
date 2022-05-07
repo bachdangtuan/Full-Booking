@@ -23,7 +23,8 @@ const stateDefault = {
     // dangChieu: true,
     // sapChieu: false,
     arrDSphimDefault: [],
-    filmDetail : {}
+    filmDetail : {},
+    phimModal:{}
 }
 
 
@@ -55,6 +56,13 @@ export const DanhSachPhimReducer = (state = stateDefault, action) => {
             state.filmDetail = action.filmDetail;
             return { ...state }
         }
+
+        case 'SET_MODAL_PHIM':{
+
+            state.phimModal = action.phim
+            return { ...state }
+        }
+
         default: return { ...state }
     }
 }
