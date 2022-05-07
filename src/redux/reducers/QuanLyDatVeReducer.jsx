@@ -1,8 +1,13 @@
-import { DAT_GHE, SET_CHI_TIET_PHONG_VE } from "../actions/TypeAction/TypeActionQuanLyDatVe"
+import { CHUYEN_TAB, DAT_GHE, SET_CHI_TIET_PHONG_VE } from "../actions/TypeAction/TypeActionQuanLyDatVe"
 
 const stateDefault = {
     chiTietPhongVe: {},
 
+    danhSachGheKhachDat: [
+        {maGhe: 53288},
+        {maGhe: 53289}
+    
+    ],
 
     danhSachGheDat: [
         // {
@@ -15,7 +20,8 @@ const stateDefault = {
         //     "daDat": false,
         //     "taiKhoanNguoiDat": null
         // }
-    ]
+    ],
+    tabActive : "1"
 }
 
 export const QuanLyDatVeReducer = (state = stateDefault, action) => {
@@ -46,7 +52,15 @@ export const QuanLyDatVeReducer = (state = stateDefault, action) => {
 
             return { ...state }
         }
+        case CHUYEN_TAB: {
+            state.tabActive = "2"
+            return {...state}
+        }
 
+        case 'CHANGE_TAB_ACTIVE':{
+            state.tabActive=action.number
+            return {...state}
+        }
 
         default: return { ...state }
     }
