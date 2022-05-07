@@ -3,6 +3,11 @@ import { DAT_GHE, DAT_VE_HOAN_TAT, SET_CHI_TIET_PHONG_VE } from "../actions/Type
 const stateDefault = {
     chiTietPhongVe: {},
 
+    danhSachGheKhachDat: [
+        {maGhe: 53288},
+        {maGhe: 53289}
+    
+    ],
 
     danhSachGheDat: [
         // {
@@ -15,7 +20,8 @@ const stateDefault = {
         //     "daDat": false,
         //     "taiKhoanNguoiDat": null
         // }
-    ]
+    ],
+    tabActive : "1"
 }
 
 export const QuanLyDatVeReducer = (state = stateDefault, action) => {
