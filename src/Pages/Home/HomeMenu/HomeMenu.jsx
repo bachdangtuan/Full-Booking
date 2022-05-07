@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { layDanhSachRapAction } from '../../../redux/actions/QuanLyRapAction';
 import { NavLink } from 'react-router-dom'
 import moment from 'moment';
-
+import style from '../HomeMenu/Home.module.css'
 
 export default function HomeMenu(props) {
     const dispatch = useDispatch();
@@ -18,7 +18,7 @@ export default function HomeMenu(props) {
     const { TabPane } = Tabs;
     const [state, setState] = useState({
         state: {
-            tabPosition: 'top',
+            tabPosition: 'left',
         }
     })
 
@@ -35,7 +35,7 @@ export default function HomeMenu(props) {
                     {sp.lstCumRap?.splice(1,5).map((cumRap, index) => {
                         return <TabPane tab={
                             <div style={{ width: '320px' }} className='flex'>
-                                <img src={cumRap.hinhAnh} width="50" />
+                                <img src={cumRap.hinhAnh} width="50" onError={(e) => (e.target.onerror = null, e.target.src = 'https://picsum.photos/75/75')} />
 
                                 <div className='text-left ml-2'>
                                     <h5> {cumRap.tenCumRap}</h5>
@@ -82,6 +82,7 @@ export default function HomeMenu(props) {
     const { tabPosition } = state.state
     return (
         <>
+           <h1 className={`text-center ${style['title']} `}>DANH SÁCH RẠP</h1>
             {/* Ant Design Tab */}
             <Tabs tabPosition={tabPosition}>
                 {renderRapPhim()}

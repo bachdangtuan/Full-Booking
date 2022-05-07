@@ -6,6 +6,12 @@ import { Provider } from 'react-redux';
 import { store } from './redux/configStore';
 import { BrowserRouter } from 'react-router-dom'
 import { DOMAIN } from './util/settings/config';
+
+
+//Import đa ngôn ngữ
+
+import './18in'
+
 //Flowbite
 import 'flowbite';
 // import CSS Slick
@@ -13,7 +19,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 // Cấu hình signalR
-import * as signalR from '@aspnet/signalr'
+import * as signalR from '@aspnet/signalr';
 
 //import CSS AntDegsign
 import 'antd/dist/antd.css';

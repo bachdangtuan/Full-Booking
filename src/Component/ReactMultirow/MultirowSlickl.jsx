@@ -34,7 +34,7 @@ const MultirowSlickl = (props) => {
     // Render Phim Slick
     const renderPhim = () => {
 
-        return props.arrDSphim.slice(0, 12).map((sp, index) => {
+        return props.arrDSphim.map((sp, index) => {
             return <div key={index} className={`${styleSlick['width-item']}`}>
                 <Film_flip phim={sp} />
             </div>
@@ -58,12 +58,12 @@ const MultirowSlickl = (props) => {
         <div>
             <div className="pb-5 text-center">
                 <button type="button" className="px-8 py-3 mr-6 font-semibold rounded-full bg-gray-600 text-white" onClick={() => {
-                    const action = { type: 'SET_PHIM_DANG_CHIEU' }
+                    const action = { type: SET_PHIM_DANG_CHIEU }
                     dispatch(action)
 
                 }}>Phim Đang Chiếu</button>
                 <button type="button" className="px-8 py-3 mr-6 font-semibold rounded-full bg-gray-600 text-white" onClick={() => {
-                    const action = { type: 'SET_PHIM_SAP_CHIEU' }
+                    const action = { type: SET_PHIM_SAP_CHIEU }
                     dispatch(action)
 
                 }}>Phim Sắp Chiếu</button>

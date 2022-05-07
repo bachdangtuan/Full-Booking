@@ -229,7 +229,6 @@ const Checkout = (props, dispatch) => {
 
 
 
-
             }} className='bg-green-500 text-white w-full text-center font-bold cursor-pointer'>
               Đặt Vé
             </div>

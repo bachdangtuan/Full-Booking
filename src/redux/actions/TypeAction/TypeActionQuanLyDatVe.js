@@ -7,3 +7,4 @@ export const HIDE_LOADING = 'HIDE_LOADING';
 
 
 export const DAT_VE_HOAN_TAT = 'DAT_VE_HOAN_TAT';
+export const CHUYEN_TAB = 'CHUYEN_TAB'

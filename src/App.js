@@ -12,6 +12,7 @@ import Checkout from './Pages/Checkout/Checkout';
 import Login from './Pages/Login/Login';
 import { UserTemplate } from './Template/UserTemplate/UserTemplate';
 import Loading from './Component/Loading/Loading';
+import Header from './Template/HomeTemplate/Layout/Header/Header';
 
 
 export const history = createBrowserHistory()
@@ -28,6 +29,7 @@ function App() {
         <CheckoutTemplate path="/checkout/:id" exact Component={Checkout} ></CheckoutTemplate>
       </Switch>
     </Router>
+
   );
 }
 

@@ -5,7 +5,7 @@ import Film from '../../Component/Film/Film';
 import MultirowSlickl from '../../Component/ReactMultirow/MultirowSlickl'
 import { layDanhSachPhimAction } from '../../redux/actions/QuanLyPhimAction';
 import HomeCarousel from '../../Template/HomeTemplate/Layout/HomeCarousel/HomeCarousel';
-
+import style from './HomeMenu/Home.module.css'
 
 export default function Home(props) {
   // Lấy danh Sách Phim
@@ -25,8 +25,9 @@ export default function Home(props) {
     <div>
       <HomeCarousel></HomeCarousel>
       <section className="text-gray-600 body-font">
-        <div className="container px-3 py-24 mx-auto">
+        <div className="container px-3 py-12 mx-auto">
           <div className='container m-auto px-40'>
+          <h1 className={`text-center ${style['title']} `}>DANH SÁCH PHIM</h1>
             <MultirowSlickl arrDSphim={arrDSphim} ></MultirowSlickl>
 
           </div>

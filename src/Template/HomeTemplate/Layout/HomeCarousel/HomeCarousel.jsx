@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { Carousel } from 'antd';
 import { useDispatch, useSelector } from 'react-redux';
 import { GetAPICarousel } from '../../../../redux/actions/CarouselAction';
+import { red } from 'tailwindcss/colors';
 
 const contentStyle = {
     height: '470px',
@@ -23,7 +24,7 @@ export default function HomeCarousel(props) {
     let renderCarousel = () => {
 
         return arrCarousel.map((sp, index) => {
-            return <div key={index}>
+            return <div key={index} className='pt-16'>
                 <div style={contentStyle}>
                     <img src={sp.hinhAnh} style={{
                         width:'65%',
@@ -34,8 +35,8 @@ export default function HomeCarousel(props) {
         })
     }
     return (
-        <div style={{
-                background: 'red'
+        <div  style={{
+               background:'red'
         }}>
             <Carousel autoplay> 
                 {renderCarousel()}
