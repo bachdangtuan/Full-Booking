@@ -1,6 +1,6 @@
 import { ThongTinDatVe } from "../../model/ThongTinDatVe";
 import { layChiTietPhongVe } from "../../Services/QuanLyDatVeService";
-import { DISPLAY_LOADING, HIDE_LOADING, SET_CHI_TIET_PHONG_VE } from "./TypeAction/TypeActionQuanLyDatVe";
+import { DAT_VE_HOAN_TAT, DISPLAY_LOADING, HIDE_LOADING, SET_CHI_TIET_PHONG_VE } from "./TypeAction/TypeActionQuanLyDatVe";
 import { guiThongTindatVe } from "../../Services/QuanLyDatVeService";
 
 
@@ -44,7 +44,9 @@ export const datVeAction = (thongTinDatVe = new ThongTinDatVe()) => {
 
             await dispatch(layChiTietPhongVeAction(thongTinDatVe.maLichChieu));
 
-
+            await dispatch({
+                type : DAT_VE_HOAN_TAT
+            })
 
 
             dispatch({

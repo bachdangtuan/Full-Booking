@@ -1,4 +1,4 @@
-import { DAT_GHE, SET_CHI_TIET_PHONG_VE } from "../actions/TypeAction/TypeActionQuanLyDatVe"
+import { DAT_GHE, DAT_VE_HOAN_TAT, SET_CHI_TIET_PHONG_VE } from "../actions/TypeAction/TypeActionQuanLyDatVe"
 
 const stateDefault = {
     chiTietPhongVe: {},
@@ -46,7 +46,12 @@ export const QuanLyDatVeReducer = (state = stateDefault, action) => {
 
             return { ...state }
         }
-
+         case DAT_VE_HOAN_TAT:{
+             state.danhSachGheDat = []
+             
+             return {...state}
+         }
+    
 
         default: return { ...state }
     }
