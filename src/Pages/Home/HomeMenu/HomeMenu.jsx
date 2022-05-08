@@ -32,7 +32,9 @@ export default function HomeMenu(props) {
                     {sp.lstCumRap?.splice(1, 5).map((cumRap, index) => {
                         return <TabPane tab={
                             <div style={{ width: '320px' }} className='flex'>
-                                <img src={cumRap.hinhAnh} width="75" onError={(e) => (e.target.onerror = null, e.target.src = 'https://picsum.photos/75/75')} />
+                                <img src={cumRap.hinhAnh} style={{
+                                    borderRadius:'10px'
+                                }} width="75" onError={(e) => (e.target.onerror = null, e.target.src = 'https://picsum.photos/75/75')} />
 
                                 <div className='text-left ml-2'>
                                     <h5> {cumRap.tenCumRap}</h5>
@@ -49,7 +51,11 @@ export default function HomeMenu(props) {
                                     return <Fragment key={index}>
                                         <div className='my-5' style={{ display: 'flex' }}>
                                             <div className='flex'>
-                                                <img src={phim.hinhAnh} alt={phim.tenPhim} width={75} height={50} onError={(e) => (e.target.onerror = null, e.target.src = 'https://picsum.photos/75/75')} />
+                                                <img src={phim.hinhAnh}
+                                                    style={{
+                                                        borderRadius:'10px'
+                                                    }}
+                                                alt={phim.tenPhim} width={75} height={30} onError={(e) => (e.target.onerror = null, e.target.src = 'https://picsum.photos/75/75')} />
                                                 <div className='ml-2'>
                                                     <h1>{phim.tenPhim}</h1>
                                                     <p>{cumRap.diaChi}</p>

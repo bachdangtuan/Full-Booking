@@ -14,4 +14,9 @@ ol, ul, dl{
 }
 .slick-prev {
     left: -53px !important;
+    top: 47% !important
 }
+.slick-next {
+    top: 47% !important
+}
+

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { useDispatch } from "react-redux";
 import Slider from "react-slick";
+import { layDanhSachRapAction } from "../../redux/actions/QuanLyRapAction";
 import { SET_PHIM_DANG_CHIEU, SET_PHIM_SAP_CHIEU } from "../../redux/actions/TypeAction/TypeQuanLyPhim";
 import Film from "../Film/Film";
 import Film_flip from "../Film/Film_flip";
@@ -54,17 +55,29 @@ const MultirowSlickl = (props) => {
         nextArrow: <SampleNextArrow />,
         prevArrow: <SamplePrevArrow />
     };
+
+    //Set phim đang chiếu
+    const actionPhimDangChieu = () =>{
+        const action = { type: SET_PHIM_DANG_CHIEU }
+        dispatch(action)
+        dispatch(layDanhSachRapAction())
+    }
+    //Set Phim Sắp Chiếu
+    const actionPhimSapChieu = () =>{
+        const action = { type: SET_PHIM_SAP_CHIEU }
+        dispatch(action)
+        dispatch(layDanhSachRapAction())
+    }
+
     return (
         <div>
             <div className="pb-5 text-center">
-                <button type="button" className="px-8 py-3 mr-6 font-semibold rounded-full active bg-gray-600 text-white" onClick={() => {
-                    const action = { type: SET_PHIM_DANG_CHIEU }
-                    dispatch(action)
+                <button type="button" className="px-8 py-3 mr-6 font-semibold rounded-full active bg-red-600 text-white" onClick={() => {
+                actionPhimDangChieu()
 
                 }}>Phim Đang Chiếu</button>
-                <button type="button" className="px-8 py-3 mr-6 font-semibold rounded-full bg-gray-600 text-white" onClick={() => {
-                    const action = { type: SET_PHIM_SAP_CHIEU }
-                    dispatch(action)
+                <button type="button" className="px-8 py-3 mr-6 font-semibold rounded-full bg-red-600 text-white" onClick={() => {
+                    actionPhimSapChieu()
 
                 }}>Phim Sắp Chiếu</button>
             </div>

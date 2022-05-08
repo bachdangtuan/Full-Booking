@@ -11,7 +11,6 @@ import { layDanhSachRapAction } from '../../redux/actions/QuanLyRapAction';
 export default function Home(props) {
   // Lấy danh Sách Phim
   let { arrDSphim } = useSelector(state => state.DanhSachPhimReducer)
-  console.log(arrDSphim);
   // Lấy danh sách Phim Modal
 
   let { phimModal } = useSelector(state => state.DanhSachPhimReducer)
@@ -55,15 +54,12 @@ export default function Home(props) {
           <div className='container m-auto px-40'>
             <h1 className={`text-center ${style['title']} `}>DANH SÁCH PHIM</h1>
             <MultirowSlickl arrDSphim={arrDSphim} setModal={setModal}  ></MultirowSlickl>
-
           </div>
         </div>
       </section>
       <div className="container m-auto px-40 ">
         <HomeMenu ></HomeMenu>
       </div>
-
-
       {showModal ? (
         <>
           <div
@@ -79,8 +75,7 @@ export default function Home(props) {
                     className="p-1 ml-auto border-0 text-black float-right text-xl"
                     onClick={() =>
                       closeModal()
-                    }
-                  >
+                    }>
                     X
                   </button>
                 </div>

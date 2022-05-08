@@ -1,6 +1,6 @@
 import { history } from "../../App";
 import { QLNguoiDungService }  from "../../Services/QuanLyNguoiDungService";
-import { DANG_NHAP, SET_THONG_TIN_NGUOI_DUNG } from "./TypeAction/TypeActionQuanLyDangNhap";
+import { DANG_NHAP, SET_THONG_TIN_NGUOI_DUNG, THONG_BAO_DANG_NHAP } from "./TypeAction/TypeActionQuanLyDangNhap";
 
 
 
@@ -22,7 +22,10 @@ export const dangNhapAction = (thongTinDangNhap) => {
         
         }
         catch (error) {
-            console.log(error.response.data);
+            dispatch({
+                type: THONG_BAO_DANG_NHAP,
+                guiThongTinDangNhap: error.response.data
+            })
         }
     }
 }

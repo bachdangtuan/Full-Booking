@@ -1,36 +1,50 @@
 import React from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 
 export default function Header() {
+
+  let { userLogin } = useSelector(state => state.QuanLyNguoiDungReducer)
+
+
   return (
-    <header className="p-4 shadow-lg bg-white fixed z-50 w-full" style={{
-    
-    }}>
+    <header className="p-4 shadow-lg bg-white fixed z-50 w-full">
       <div className="container px-20 flex justify-between h-8 mx-auto">
-        <img src="https://cyberlearn.vn/wp-content/uploads/2020/03/cyberlearn-min-new-opt2.png" alt="..." />
+        <Link to="/" className="flex items-center px-4 ">
+          <img src="https://cyberlearn.vn/wp-content/uploads/2020/03/cyberlearn-min-new-opt2.png" alt="..." />
+
+        </Link>
         <ul className="items-stretch hidden space-x-3 lg:flex">
           <li className="flex">
-            <a rel="noopener noreferrer" href="#" className="flex items-center px-4 -mb-1 ">Trang Chủ</a>
+            <Link to="/" className="flex items-center px-4 text-red-700 font-semibold	">Trang Chủ</Link>
           </li>
           <li className="flex">
-            <a rel="noopener noreferrer" href="#" className="flex items-center px-4 -mb-1 ">Tin Tức</a>
+            <Link to="/news" className="flex items-center px-4 text-red-700 font-semibold	">Tin Tức</Link>
           </li>
           <li className="flex">
-            <a rel="noopener noreferrer" href="#" className="flex items-center px-4 -mb-1 ">Liên Hệ</a>
+            <Link to='/contact' className="flex items-center px-4 text-red-700 font-semibold">Liên Hệ</Link>
           </li>
-
         </ul>
-        <div className="items-center flex-shrink-0 hidden lg:flex">
+        <div className="items-center flex-shrink-0 lg:flex">
+          {(userLogin.taiKhoan === '') ? (
 
-          <button className="self-center px-4 py-3 ">
-            <i class="fa-solid fa-right-to-bracket pl-3" /> Đăng Nhập</button>
+            <Link to='/login' className="px-8 py-3 font-semibold rounded text-red-700">Đăng Nhập</Link>
+          ) : (
+            <div>
+              <h1>Xin Chào: <span className='text-red-700'>
+                {userLogin.taiKhoan}
+              </span>
+              <button onClick={() => {
+                console.log('test');
+                localStorage.removeItem('USER_LOGIN');
+                localStorage.removeItem('accessToken')
+                window.location.reload()
+              }}>Đăng Xuất</button>
+              </h1>
+            </div>
+          )}
 
         </div>
-        <button className="p-4 lg:hidden">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-6 h-6 dark:text-coolGray-100">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-          </svg>
-        </button>
       </div>
     </header>
 

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useFormik } from 'formik';
 import { useDispatch, useSelector } from 'react-redux';
 import { dangNhapAction } from '../../redux/actions/QuanLyNguoiDungAction'
@@ -8,8 +8,8 @@ export default function Login() {
   const dispatch = useDispatch();
 
 
-  const {userLogin} = useSelector(state => state.QuanLyNguoiDungReducer)
-  console.log(userLogin);
+  const { userLogin, thongTiNDangNhap } = useSelector(state => state.QuanLyNguoiDungReducer)
+  console.log(thongTiNDangNhap);
 
   const formik = useFormik({
     initialValues: {
@@ -19,12 +19,14 @@ export default function Login() {
     },
     onSubmit: values => {
       const action = dangNhapAction(values);
-
-      dispatch(action);
-
-      console.log(values);
-    },
+      dispatch(action);        
+    }
   })
+
+  
+
+  
+
 
   return (
     <div className="w-full h-screen flex items-center justify-center">

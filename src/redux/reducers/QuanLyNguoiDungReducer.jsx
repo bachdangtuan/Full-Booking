@@ -1,9 +1,12 @@
 import { TOKEN, USER_LOGIN } from "../../util/settings/config";
-import { DANG_NHAP, SET_THONG_TIN_NGUOI_DUNG } from "../actions/TypeAction/TypeActionQuanLyDangNhap";
+import { DANG_NHAP, SET_THONG_TIN_NGUOI_DUNG, THONG_BAO_DANG_NHAP } from "../actions/TypeAction/TypeActionQuanLyDangNhap";
 
 //Lưu thông tin đăng nhập lấy từ store
 
-let login = {};
+let login = {
+    taiKhoan: "",
+
+};
 if (localStorage.getItem(USER_LOGIN)) {
     login = JSON.parse(localStorage.getItem(USER_LOGIN));
 }
@@ -14,6 +17,9 @@ const stateDefault = {
 
     thongTinNguoiDung: {
 
+    },
+    thongTiNDangNhap: {
+  
     }
 
 }
@@ -34,11 +40,14 @@ export const QuanLyNguoiDungReducer = (state = stateDefault, action) => {
 
             state.thongTinNguoiDung = action.thongTinNguoiDung
 
-            console.log('action',action);
             return {...state}
         }
 
+        case THONG_BAO_DANG_NHAP: {
+            state.thongTiNDangNhap = action.guiThongTinDangNhap
 
+            return {...state}
+        }
 
 
         default: return { ...state }
