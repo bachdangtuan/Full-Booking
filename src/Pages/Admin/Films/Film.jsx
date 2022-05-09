@@ -6,6 +6,7 @@ import { AudioOutlined, DeleteOutlined, EditOutlined } from '@ant-design/icons';
 import { useDispatch, useSelector } from 'react-redux';
 import { layDanhSachPhimAction } from '../../../redux/actions/QuanLyPhimAction';
 import { NavLink } from 'react-router-dom';
+import { history } from '../../../App';
 
 const { Search } = Input;
 
@@ -100,7 +101,10 @@ export default function Film() {
   return (
     <div>
       <h1>Quản Lý Phim</h1>
-      <Button className='mb-5'> Thêm Phim</Button>
+      <Button className='mb-5' onClick={() =>{
+        history.push('/admin/films/addnew')
+      }
+      }> Thêm Phim</Button>
       <Search
         placeholder="input search text"
         enterButton="Search"

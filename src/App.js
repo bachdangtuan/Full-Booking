@@ -18,6 +18,9 @@ import {AdminTemplate} from './Template/AdminTemplate/AdminTemplate'
 import Dashbroad from './Pages/Admin/Dashbroad/Dashbroad'
 import Film from './Pages/Admin/Films/Film'
 import Showtime from './Pages/Admin/Showtime/Showtime'
+import AddNewPhim from './Pages/Admin/Films/Addnew/AddNewPhim'
+
+
 
 export const history = createBrowserHistory()
 function App() {
@@ -34,6 +37,9 @@ function App() {
 
         <AdminTemplate path="/admin" exact Component={Dashbroad}></AdminTemplate>
         <AdminTemplate path="/admin/films" exact Component={Film}></AdminTemplate>
+    
+        <AdminTemplate path="/admin/films/addnew" exact Component={AddNewPhim}></AdminTemplate>
+
         <AdminTemplate path="/admin/users" exact Component={Dashbroad}></AdminTemplate>
         <AdminTemplate path="/admin/showtime" exact Component={Showtime}></AdminTemplate>
       </Switch>

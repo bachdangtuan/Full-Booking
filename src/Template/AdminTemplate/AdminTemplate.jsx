@@ -39,7 +39,7 @@ export const AdminTemplate = (props) => {
 
     }
 
-    
+
 
     const operations = <Fragment>
         {!_.isEmpty(userLogin) ? <Fragment> <button onClick={() => {
@@ -68,9 +68,10 @@ export const AdminTemplate = (props) => {
                         <SubMenu key="sub1" icon={<FileOutlined />} title="Films">
                             <Menu.Item key="10" icon={<FileOutlined />}>
                                 <NavLink to="/admin/films">Films</NavLink>
-
                             </Menu.Item>
-
+                            <Menu.Item key="8" icon={<FileOutlined />}>
+                                <NavLink to="/admin/films/addnew">Thêm Phim Mới</NavLink>
+                            </Menu.Item>
                         </SubMenu>
                         <Menu.Item key="3" icon={<DesktopOutlined />}>
                             <NavLink to="/admin/showtime">Showtime</NavLink>
