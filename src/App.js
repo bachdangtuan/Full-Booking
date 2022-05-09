@@ -12,8 +12,12 @@ import Checkout from './Pages/Checkout/Checkout';
 import Login from './Pages/Login/Login';
 import { UserTemplate } from './Template/UserTemplate/UserTemplate';
 import Loading from './Component/Loading/Loading';
-import Header from './Template/HomeTemplate/Layout/Header/Header';
 
+import {AdminTemplate} from './Template/AdminTemplate/AdminTemplate'
+
+import Dashbroad from './Pages/Admin/Dashbroad/Dashbroad'
+import Film from './Pages/Admin/Films/Film'
+import Showtime from './Pages/Admin/Showtime/Showtime'
 
 export const history = createBrowserHistory()
 function App() {
@@ -27,6 +31,11 @@ function App() {
         <HomeTemplate path="/news" exact Component={News}></HomeTemplate>
         <HomeTemplate path="/detail/:id" exact Component={Details}></HomeTemplate>
         <CheckoutTemplate path="/checkout/:id" exact Component={Checkout} ></CheckoutTemplate>
+
+        <AdminTemplate path="/admin" exact Component={Dashbroad}></AdminTemplate>
+        <AdminTemplate path="/admin/films" exact Component={Film}></AdminTemplate>
+        <AdminTemplate path="/admin/users" exact Component={Dashbroad}></AdminTemplate>
+        <AdminTemplate path="/admin/showtime" exact Component={Showtime}></AdminTemplate>
       </Switch>
     </Router>
 

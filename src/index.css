@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 /* Custom CSS */
 .ant-carousel .slick-dots{
     margin-left: 0% !important;

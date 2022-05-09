@@ -7,7 +7,6 @@ import { store } from './redux/configStore';
 import { BrowserRouter } from 'react-router-dom'
 import { DOMAIN } from './util/settings/config';
 
-
 //Import đa ngôn ngữ
 
 import './18in'
